@@ -2,7 +2,14 @@
 
 **Active HTTP Desynchronization Vulnerability Scanner**
 
-![Banner](https://via.placeholder.com/800x200/2c3e50/ffffff?text=DesyncDiver)
+```
+██████╗ ███████╗███████╗██╗   ██╗███╗   ██╗ ██████╗██████╗ ██╗██╗   ██╗███████╗██████╗ 
+██╔══██╗██╔════╝██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝██╔══██╗██║██║   ██║██╔════╝██╔══██╗
+██║  ██║█████╗  ███████╗ ╚████╔╝ ██╔██╗ ██║██║     ██║  ██║██║██║   ██║█████╗  ██████╔╝
+██║  ██║██╔══╝  ╚════██║  ╚██╔╝  ██║╚██╗██║██║     ██║  ██║██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+██████╔╝███████╗███████║   ██║   ██║ ╚████║╚██████╗██████╔╝██║ ╚████╔╝ ███████╗██║  ██║
+╚═════╝ ╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═══╝ ╚═════╝╚═════╝ ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝
+```
 
 DesyncDiver is a bash-based tool for detecting HTTP Request Smuggling (Desynchronization) vulnerabilities in web servers and proxy chains. It actively tests targets by sending specially crafted HTTP requests designed to identify parsing inconsistencies between front-end and back-end servers.
 

